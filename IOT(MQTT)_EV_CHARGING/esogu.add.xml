@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-05-31 20:44:56 by Eclipse SUMO netedit Version 1.19.0
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- StoppingPlaces -->
+    <chargingStation id="cs_0" lane="E3_0" startPos="25.88" endPos="35.88" power="10000.00" efficiency="1.00"/>
+    <chargingStation id="cs_1" lane="E6_0" startPos="13.75" endPos="23.75" power="10000.00" efficiency="1.00"/>
+    <chargingStation id="cs_2" lane="E9_0" startPos="13.52" endPos="23.52" power="10000.00" efficiency="1.00"/>
+    <chargingStation id="cs_3" lane="E12_0" startPos="10.84" endPos="20.84" power="10000.00" efficiency="1.00"/>
+    <chargingStation id="cs_4" lane="E15_0" startPos="17.33" endPos="27.33" power="10000.00" efficiency="1.00"/>
+    <chargingStation id="cs_5" lane="E18_0" startPos="16.14" endPos="26.14" power="10000.00" efficiency="1.00"/>
+
+    <rerouter id="rr_0" edges="697983200" pos="6300.91,1421.42">
+        <interval begin="0.00" end="3600.00">
+            <destProbReroute id="697983203" probability="1.00"/>
+        </interval>
+    </rerouter>
+
+    <vType id="electricCar" accel="0.8" decel="4.5" sigma="0.5" length="4.5" minGap="2.5" maxSpeed="55.56" guiShape="passenger">
+        <param key="has.battery.device" value="true"/>
+        <param key="device.battery.maximumBatteryCapacity" value="1000"/>
+        <param key="device.battery.actualBatteryCapacity" value="1000"/>
+    </vType>
+</additional>

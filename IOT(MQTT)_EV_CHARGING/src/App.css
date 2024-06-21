@@ -1,0 +1,163 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.car-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.car-card {
+  /* border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  width: 300px;
+  height: 400px; /* Card'ın boyunu ayarlayın 
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer; 
+  transition: transform 0.5s ease-in-out; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.car-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.car-image-small {
+  width: 95px; /* Görselin genişliği */
+  height: auto;
+  margin-left: 8px;
+}
+
+.car-title {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.battery,
+.charge-level,
+.route,
+.charge-station {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.low-battery {
+  background-color: #f8d7da;
+}
+
+.charging {
+  background-color: #fff3cd;
+}
+
+.normal {
+  background-color: #d4edda;
+}
+
+/* İkon boyutunu ayarlamak için stil */
+.icon {
+  font-size: 40px; /* İkonun boyutunu ayarlayın */
+  margin-right: 4px; /* Metin ile ikon arasındaki boşluğu ayarlayın */
+}
+/* İkonlu metinler için hizalama */
+.text-icon {
+  display: flex;
+  align-items: center;
+  font-size: 14px; /* Metnin boyutunu ayarlayın */
+}
+/* CarDetailModal.css */
+.car-details {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  max-width: 100px; /* Maksimum genişlik ayarlayarak görselin aşırı büyümesini engelliyoruz */
+  display: block;
+  margin: 10px auto;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.close-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 400px;
+  height: 40px;
+}
+
+button.close-button:hover {
+  background-color: #0056b3;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+  animation: modalFadeIn 0.5s ease-in-out; /* Açılış animasyonu */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

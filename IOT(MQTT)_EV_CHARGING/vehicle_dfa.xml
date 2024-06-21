@@ -1,0 +1,51 @@
+<fsm name="ChargingProcess">
+    <states>
+        <state name="Idle" initial="true"/>
+        <state name="Searching"/>
+        <state name="OnTheWay"/>
+        <state name="Approaching"/>
+        <state name="Waiting"/>
+        <state name="Connecting"/>
+        <state name="Charging"/>
+        <state name="ChargingComplete"/>
+        <state name="Disconnecting"/>
+        <state name="Leaving"/>
+    </states>
+    <alphabet>
+        <symbol>BatteryLevelHigh</symbol>
+        <symbol>BatteryLevelLow</symbol>
+        <symbol>StationNotDetected</symbol>
+        <symbol>StationDetected</symbol>
+        <symbol>GoingToTheStation</symbol>
+        <symbol>StationNotReached</symbol>
+        <symbol>ReachedStation</symbol>
+        <symbol>StationIsFree</symbol>
+        <symbol>StationIsFull</symbol>
+        <symbol>ChargerNotConnected</symbol>
+        <symbol>ChargerConnected</symbol>
+        <symbol>BatteryNotFull</symbol>
+        <symbol>BatteryFull</symbol>
+        <symbol>DisconnectNotConfirmed</symbol>
+        <symbol>DisconnectConfirmed</symbol>
+        <symbol>DriveCommand</symbol>
+    </alphabet>
+    <transitions>
+        <transition from="Idle" to="Searching" symbol="BatteryLevelLow"/>
+        <transition from="Idle" to="Idle" symbol="BatteryLevelHigh"/>
+        <transition from="Searching" to="Searching" symbol="StationNotDetected"/>
+        <transition from="Searching" to="OnTheWay" symbol="StationDetected"/>
+        <transition from="OnTheWay" to="Approaching" symbol="GoingToTheStation"/>
+        <transition from="Approaching" to="Approaching" symbol="StationNotReached"/>
+        <transition from="Approaching" to="Waiting" symbol="ReachedStation"/>
+        <transition from="Waiting" to="Waiting" symbol="StationIsFull"/>
+        <transition from="Waiting" to="Connecting" symbol="StationIsFree"/>
+        <transition from="Connecting" to="Connecting" symbol="ChargerNotConnected"/>
+        <transition from="Connecting" to="Charging" symbol="ChargerConnected"/>
+        <transition from="Charging" to="Charging" symbol="BatteryNotFull"/>
+        <transition from="Charging" to="ChargingComplete" symbol="BatteryFull"/>
+        <transition from="ChargingComplete" to="Disconnecting" symbol="DisconnectConfirmed"/>
+        <transition from="Disconnecting" to="Disconnecting" symbol="DisconnectNotConfirmed"/>
+        <transition from="Disconnecting" to="Leaving" symbol="ChargerDisconnected"/>
+        <transition from="Leaving" to="Idle" symbol="DriveCommand"/>
+    </transitions>
+</fsm>
