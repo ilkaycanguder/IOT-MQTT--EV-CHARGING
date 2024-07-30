@@ -2,7 +2,7 @@
 
 This project involves a SUMO simulation integrated with MQTT for vehicle and charging station management.
 
-## Summary (Required)
+## Summary
 
 This project integrates Eclipse SUMO and MQTT to manage electric vehicle (EV) charging stations. Vehicles in the simulation head to the nearest charging station when their battery falls below 25%, wait if another vehicle is charging, and communicate using MQTT. The project also includes a React interface to display real-time data from the simulation.
 
