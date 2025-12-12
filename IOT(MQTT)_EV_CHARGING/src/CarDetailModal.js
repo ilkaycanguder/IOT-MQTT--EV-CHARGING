@@ -3,7 +3,7 @@ import mqtt from "mqtt";
 import Modal from "react-modal";
 import BatteryLevelChart from "./BatteryLevelChart"; // BatteryLevelChart bileşenini içe aktar
 import "./App.css"; // Stil dosyasını ekleyin
-import { Typography, Button } from "@material-ui/core"; // Material-UI bileşenlerini ekleyin
+import { Typography, Button } from "@mui/material";
 
 const CarDetailModal = ({ isOpen, onRequestClose, car }) => {
   const [currentCar, setCurrentCar] = useState(car);
@@ -64,30 +64,30 @@ const CarDetailModal = ({ isOpen, onRequestClose, car }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel="Car Details"
-      className="modal"
-      overlayClassName="overlay"
+      contentLabel='Car Details'
+      className='modal'
+      overlayClassName='overlay'
     >
-      <Typography variant="h5" gutterBottom>
+      <Typography variant='h5' gutterBottom>
         Details for {currentCar.car_id}
       </Typography>
       <div className={`car-details ${getColorClass(currentCar)}`}>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Status:</strong> {currentCar.status}
         </Typography>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Battery:</strong> {currentCar.battery} kW
         </Typography>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Charge Level:</strong> {currentCar.charge_level.toFixed(2)}%
         </Typography>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Speed:</strong> {currentCar.speed} km/h
         </Typography>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Route:</strong> {currentCar.route}
         </Typography>
-        <Typography variant="body1">
+        <Typography variant='body1'>
           <strong>Charge Station:</strong> {currentCar.charge_station}
         </Typography>
         <div style={{ flexGrow: 1 }}>
@@ -107,7 +107,7 @@ const CarDetailModal = ({ isOpen, onRequestClose, car }) => {
           }}
         />
       </div>
-      <Button onClick={onRequestClose} variant="contained" color="primary">
+      <Button onClick={onRequestClose} variant='contained' color='primary'>
         Close
       </Button>
     </Modal>
