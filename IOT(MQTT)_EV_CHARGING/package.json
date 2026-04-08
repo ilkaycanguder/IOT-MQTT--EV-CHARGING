@@ -55,6 +55,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
   "overrides": {
-    "node-forge": "^1.4.0"
+    "node-forge": "^1.4.0",
+    "path-to-regexp": "^0.1.12"
   }
 }
