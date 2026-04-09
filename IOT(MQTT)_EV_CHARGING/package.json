@@ -56,6 +56,14 @@
   },
   "overrides": {
     "node-forge": "^1.4.0",
-    "path-to-regexp": "^0.1.12"
+    "path-to-regexp": "^0.1.12",
+    "picomatch": "^2.3.2",
+    "lodash": "^4.17.21",
+    "underscore": "^1.13.6",
+    "yaml": "^2.0.0",
+    "nth-check": "^2.0.1",
+    "postcss": "^8.4.31",
+    "serialize-javascript": "^6.0.2",
+    "webpack-dev-server": "^5.2.0"
   }
 }
